@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Flows - Plataforma Inmobiliaria CR</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .nav-header {
+            background: white;
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        .back-btn:hover {
+            background: #e2e8f0;
+            transform: translateX(-2px);
+        }
+        .page-title {
+            color: #1e293b;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        .breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .flow-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .flow-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+        .flow-step {
+            min-width: 140px;
+            background: #f1f5f9;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .flow-step.start {
+            background: #dcfce7;
+            border-color: #16a34a;
+        }
+        .flow-step.decision {
+            background: #fef3c7;
+            border-color: #f59e0b;
+            border-radius: 50px;
+        }
+        .flow-step.end {
+            background: #dbeafe;
+            border-color: #3b82f6;
+        }
+        .flow-step.education {
+            background: #fae8ff;
+            border-color: #a855f7;
+        }
+        .flow-step.tools {
+            background: #ecfeff;
+            border-color: #06b6d4;
+        }
+        .flow-arrow {
+            width: 30px;
+            height: 2px;
+            background: #94a3b8;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .flow-arrow::after {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: -3px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #94a3b8;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+        .step-title {
+            font-weight: 600;
+            font-size: 12px;
+            color: #374151;
+            margin-bottom: 5px;
+        }
+        .step-description {
+            font-size: 10px;
+            color: #6b7280;
+        }
+        .persona-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        .persona-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .persona-info h3 {
+            margin: 0;
+            color: #1e293b;
+            font-size: 16px;
+        }
+        .persona-info p {
+            margin: 5px 0 0 0;
+            color: #64748b;
+            font-size: 14px;
+        }
+        .flow-branch {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 3px solid #e2e8f0;
+            background: #fafafa;
+        }
+        .branch-title {
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 10px;
+        }
+        .sub-flow {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 10px 0;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+        .sub-step {
+            min-width: 100px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+            font-size: 11px;
+            flex-shrink: 0;
+        }
+        .pain-point {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+            font-size: 14px;
+        }
+        .opportunity {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+            font-size: 14px;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .metric-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 5px;
+        }
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .flow-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .flow-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 0;
+        }
+        .flow-step {
+            min-width: 140px;
+            background: #f1f5f9;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+        .flow-step.start {
+            background: #dcfce7;
+            border-color: #16a34a;
+        }
+        .flow-step.decision {
+            background: #fef3c7;
+            border-color: #f59e0b;
+            border-radius: 50px;
+        }
+        .flow-step.end {
+            background: #dbeafe;
+            border-color: #3b82f6;
+        }
+        .flow-step.education {
+            background: #fae8ff;
+            border-color: #a855f7;
+        }
+        .flow-step.tools {
+            background: #ecfeff;
+            border-color: #06b6d4;
+        }
+        .flow-arrow {
+            width: 30px;
+            height: 2px;
+            background: #94a3b8;
+            position: relative;
+        }
+        .flow-arrow::after {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: -3px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #94a3b8;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+        .step-title {
+            font-weight: 600;
+            font-size: 12px;
+            color: #374151;
+            margin-bottom: 5px;
+        }
+        .step-description {
+            font-size: 10px;
+            color: #6b7280;
+        }
+        .persona-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        .persona-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .persona-info h3 {
+            margin: 0;
+            color: #1e293b;
+            font-size: 16px;
+        }
+        .persona-info p {
+            margin: 5px 0 0 0;
+            color: #64748b;
+            font-size: 14px;
+        }
+        .flow-branch {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 3px solid #e2e8f0;
+            background: #fafafa;
+        }
+        .branch-title {
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 10px;
+        }
+        .sub-flow {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .sub-step {
+            min-width: 100px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 8px;
+            text-align: center;
+            font-size: 11px;
+        }
+        .pain-point {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .opportunity {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .metric-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- NAVEGACIÓN -->
+        <div class="nav-header">
+            <div>
+                <a href="index.html" class="back-btn">
+                    ← Volver al Inicio
+                </a>
+                <div class="breadcrumb" style="margin-top: 8px;">
+                    <a href="index.html">Home</a>
+                    <span>→</span>
+                    <span>User Flows</span>
+                </div>
+            </div>
+            <h1 class="page-title">User Flows - Plataforma Inmobiliaria CR</h1>
+        </div>
+        
+        <!-- FLUJO PRINCIPAL -->
+        <div class="flow-section">
+            <div class="flow-title">
+                Flujo Principal de Usuario
+            </div>
+            <div class="flow-diagram">
+                <div class="flow-step start">
+                    <div class="step-title">INICIO</div>
+                    <div class="step-description">Llega a la plataforma</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step decision">
+                    <div class="step-title">TIPO USUARIO</div>
+                    <div class="step-description">Selecciona perfil</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step education">
+                    <div class="step-title">EDUCACIÓN</div>
+                    <div class="step-description">Aprende proceso</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">HERRAMIENTAS</div>
+                    <div class="step-description">Usa calculadoras</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step">
+                    <div class="step-title">BÚSQUEDA</div>
+                    <div class="step-description">Encuentra propiedades</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">COMPARACIÓN</div>
+                    <div class="step-description">Evalúa opciones</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step end">
+                    <div class="step-title">CONTACTO</div>
+                    <div class="step-description">Acción final</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FLUJO COMPRADOR PRIMERIZO -->
+        <div class="flow-section">
+            <div class="flow-title">
+                Flujo: Compradora Primeriza (María)
+            </div>
+            
+            <div class="persona-header">
+                <div class="persona-avatar" style="background: #7c3aed;">M</div>
+                <div class="persona-info">
+                    <h3>María Fernández - "La Desorientada"</h3>
+                    <p>32 años, primera compra, necesita mucha educación</p>
+                </div>
+            </div>
+            
+            <div class="flow-diagram">
+                <div class="flow-step start">
+                    <div class="step-title">LLEGADA</div>
+                    <div class="step-description">Google: "cómo comprar casa CR"</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step education">
+                    <div class="step-title">MI PRIMERA CASA</div>
+                    <div class="step-description">Portal educativo</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">CALCULADORA</div>
+                    <div class="step-description">¿Cuánto puedo pagar?</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step">
+                    <div class="step-title">BÚSQUEDA FILTRADA</div>
+                    <div class="step-description">Por presupuesto real</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">COMPARADOR</div>
+                    <div class="step-description">Lado a lado</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step education">
+                    <div class="step-title">GUÍA CONTACTO</div>
+                    <div class="step-description">Qué preguntar</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step end">
+                    <div class="step-title">CONTACTO CONFIADO</div>
+                    <div class="step-description">Con conocimiento</div>
+                </div>
+            </div>
+            
+            <div class="pain-point">
+                <strong>Pain Point Actual:</strong> Se siente perdida, agentes la tratan mal, no entiende costos reales
+            </div>
+            <div class="opportunity">
+                <strong>Oportunidad:</strong> Portal educativo como entrada principal, calculadoras integradas
+            </div>
+        </div>
+
+        <!-- FLUJO INVERSOR EXTRANJERO -->
+        <div class="flow-section">
+            <div class="flow-title">
+                Flujo: Inversor Extranjero (Robert)
+            </div>
+            
+            <div class="persona-header">
+                <div class="persona-avatar" style="background: #ea580c;">R</div>
+                <div class="persona-info">
+                    <h3>Robert Mitchell - "El Analítico Internacional"</h3>
+                    <p>48 años, busca ROI, necesita datos específicos</p>
+                </div>
+            </div>
+            
+            <div class="flow-diagram">
+                <div class="flow-step start">
+                    <div class="step-title">PORTAL INVERSORES</div>
+                    <div class="step-description">Acceso directo</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step education">
+                    <div class="step-title">LEGAL EXTRANJEROS</div>
+                    <div class="step-description">Qué puede comprar</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">CALCULADORA ROI</div>
+                    <div class="step-description">Análisis completo</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step">
+                    <div class="step-title">BÚSQUEDA AVANZADA</div>
+                    <div class="step-description">Filtros de inversión</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">ANÁLISIS MERCADO</div>
+                    <div class="step-description">Datos por región</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">SERVICIOS LOCALES</div>
+                    <div class="step-description">PM, abogados, etc</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step end">
+                    <div class="step-title">DASHBOARD</div>
+                    <div class="step-description">Gestión remota</div>
+                </div>
+            </div>
+            
+            <div class="flow-branch">
+                <div class="branch-title">Sub-flujo: Análisis de Propiedad</div>
+                <div class="sub-flow">
+                    <div class="sub-step">Ver Propiedad</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">Datos HOA</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">Potencial Alquiler</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">Cálculo ROI</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">Guardar/Comparar</div>
+                </div>
+            </div>
+            
+            <div class="pain-point">
+                <strong>Pain Point Actual:</strong> Información legal poco clara, sin datos ROI, costos ocultos
+            </div>
+            <div class="opportunity">
+                <strong>Oportunidad:</strong> Portal especializado con calculadoras ROI y servicios integrados
+            </div>
+        </div>
+
+        <!-- FLUJO DESARROLLADOR -->
+        <div class="flow-section">
+            <div class="flow-title">
+                Flujo: Desarrollador Local (Carlos)
+            </div>
+            
+            <div class="persona-header">
+                <div class="persona-avatar" style="background: #0891b2;">C</div>
+                <div class="persona-info">
+                    <h3>Carlos Vega - "El Constructor Pragmático"</h3>
+                    <p>42 años, busca terrenos, necesita datos técnicos</p>
+                </div>
+            </div>
+            
+            <div class="flow-diagram">
+                <div class="flow-step start">
+                    <div class="step-title">PORTAL DESARROLLADORES</div>
+                    <div class="step-description">Acceso técnico</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">MAPAS ZONIFICACIÓN</div>
+                    <div class="step-description">Uso de suelo</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step">
+                    <div class="step-title">FILTROS TÉCNICOS</div>
+                    <div class="step-description">Área, servicios</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">FACTIBILIDAD</div>
+                    <div class="step-description">Unidades posibles</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step">
+                    <div class="step-title">VERIFICACIÓN LEGAL</div>
+                    <div class="step-description">Estado documentos</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step end">
+                    <div class="step-title">CONTACTO DIRECTO</div>
+                    <div class="step-description">Sin intermediarios</div>
+                </div>
+            </div>
+            
+            <div class="pain-point">
+                <strong>Pain Point Actual:</strong> Información técnica incompleta, pérdida de tiempo en verificaciones
+            </div>
+            <div class="opportunity">
+                <strong>Oportunidad:</strong> Mapas de zonificación integrados, calculadoras de factibilidad
+            </div>
+        </div>
+
+        <!-- FLUJO EXPATRIADA RETIRADA -->
+        <div class="flow-section">
+            <div class="flow-title">
+                Flujo: Expatriada Retirada (Elizabeth)
+            </div>
+            
+            <div class="persona-header">
+                <div class="persona-avatar" style="background: #dc2626;">E</div>
+                <div class="persona-info">
+                    <h3>Elizabeth Thompson - "La Buscadora de Comunidad"</h3>
+                    <p>58 años, retirada de Canadá, busca hogar permanente</p>
+                </div>
+            </div>
+            
+            <div class="flow-diagram">
+                <div class="flow-step start">
+                    <div class="step-title">PORTAL EXPATRIADOS</div>
+                    <div class="step-description">Sección especializada</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step education">
+                    <div class="step-title">GUÍA RELOCALIZACIÓN</div>
+                    <div class="step-description">Proceso paso a paso</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">FILTROS COMUNIDAD</div>
+                    <div class="step-description">Expatriados, servicios</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step">
+                    <div class="step-title">INFO ESTILO VIDA</div>
+                    <div class="step-description">Clima, internet, médicos</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">FOROS EXPATRIADOS</div>
+                    <div class="step-description">Experiencias reales</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step education">
+                    <div class="step-title">CHECKLIST LEGAL</div>
+                    <div class="step-description">Trámites migratorios</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step end">
+                    <div class="step-title">SERVICIOS INTEGRADOS</div>
+                    <div class="step-description">Abogados, doctors</div>
+                </div>
+            </div>
+            
+            <div class="flow-branch">
+                <div class="branch-title">Sub-flujo: Evaluación de Comunidad</div>
+                <div class="sub-flow">
+                    <div class="sub-step">Ver Área</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">Datos Climáticos</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">Comunidad Expat</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">Servicios Locales</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">Visita Virtual</div>
+                </div>
+            </div>
+            
+            <div class="pain-point">
+                <strong>Pain Point Actual:</strong> Falta información sobre estilo de vida, servicios deficientes no advertidos
+            </div>
+            <div class="opportunity">
+                <strong>Oportunidad:</strong> Portal especializado con foros de expatriados y guías de relocalización
+            </div>
+        </div>
+
+        <!-- FLUJO INVERSOR NACIONAL EMERGENTE -->
+        <div class="flow-section">
+            <div class="flow-title">
+                Flujo: Inversor Nacional Emergente (Andrés)
+            </div>
+            
+            <div class="persona-header">
+                <div class="persona-avatar" style="background: #059669;">A</div>
+                <div class="persona-info">
+                    <h3>Andrés Mora - "El Emprendedor Diversificador"</h3>
+                    <p>35 años, primera inversión inmobiliaria, necesita educación</p>
+                </div>
+            </div>
+            
+            <div class="flow-diagram">
+                <div class="flow-step start">
+                    <div class="step-title">ACADEMIA INVERSIÓN</div>
+                    <div class="step-description">Educación básica CR</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step education">
+                    <div class="step-title">CASOS DE ESTUDIO</div>
+                    <div class="step-description">Experiencias reales</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">CALCULADORA ROI</div>
+                    <div class="step-description">Rentabilidad estimada</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step">
+                    <div class="step-title">ANÁLISIS DEMANDA</div>
+                    <div class="step-description">Zonas y tendencias</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step tools">
+                    <div class="step-title">FILTROS INVERSIÓN</div>
+                    <div class="step-description">Por tipo y zona</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step education">
+                    <div class="step-title">GUÍA LEGAL</div>
+                    <div class="step-description">Impuestos, contratos</div>
+                </div>
+                <div class="flow-arrow"></div>
+                <div class="flow-step end">
+                    <div class="step-title">GESTIÓN INQUILINOS</div>
+                    <div class="step-description">Herramientas manejo</div>
+                </div>
+            </div>
+            
+            <div class="flow-branch">
+                <div class="branch-title">Sub-flujo: Análisis de Inversión</div>
+                <div class="sub-flow">
+                    <div class="sub-step">Precio Compra</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">Gastos Estimados</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">Alquiler Sugerido</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">ROI Proyectado</div>
+                    <div class="flow-arrow" style="width: 20px;"></div>
+                    <div class="sub-step">Decisión Final</div>
+                </div>
+            </div>
+            
+            <div class="pain-point">
+                <strong>Pain Point Actual:</strong> Falta educación financiera específica, costos ocultos, sin herramientas análisis
+            </div>
+            <div class="opportunity">
+                <strong>Oportunidad:</strong> Academia de inversión con calculadoras y casos de estudio reales
+            </div>
+        </div>
+    </div>
+</body>
+</html>

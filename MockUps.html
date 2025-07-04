@@ -1,0 +1,1875 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockups Finales - Plataforma Inmobiliaria CR</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .nav-header {
+            background: white;
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        .back-btn:hover {
+            background: #e2e8f0;
+            transform: translateX(-2px);
+        }
+        .page-title {
+            color: #1e293b;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        .breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .mockup-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        }
+        .screen {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .screen-title {
+            background: #1e293b;
+            color: white;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+        .nav-link {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .nav-link.active {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+        .nav-link:hover {
+            background: #f1f5f9;
+        }
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary {
+            background: #1e40af;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #1e40af;
+            border: 2px solid #1e40af;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #475569;
+            border: 1px solid #d1d5db;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 32px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 20px;
+            opacity: 0.9;
+            margin: 0 0 32px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .search-bar {
+            background: white;
+            border-radius: 12px;
+            padding: 8px;
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            outline: none;
+        }
+        .search-btn {
+            background: #1e40af;
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .portals {
+            padding: 60px 32px;
+            background: #f8fafc;
+        }
+        .portals h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0 0 16px 0;
+        }
+        .portals p {
+            text-align: center;
+            color: #64748b;
+            font-size: 18px;
+            margin: 0 0 48px 0;
+        }
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .portal-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .portal-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            border-color: #3b82f6;
+        }
+        .portal-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            font-weight: bold;
+        }
+        .portal-card.primerizo .portal-icon {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+        }
+        .portal-card.inversor .portal-icon {
+            background: linear-gradient(135deg, #ea580c, #f97316);
+        }
+        .portal-card.desarrollador .portal-icon {
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+        }
+        .portal-card.expatriado .portal-icon {
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+        }
+        .portal-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0 0 8px 0;
+        }
+        .portal-card p {
+            color: #64748b;
+            font-size: 14px;
+            margin: 0;
+            text-align: center;
+        }
+        .content {
+            padding: 32px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+        .property-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .property-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .property-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .property-content {
+            display: flex;
+            gap: 16px;
+            padding: 20px;
+        }
+        .property-image {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #e2e8f0, #cbd5e1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        .property-info {
+            flex: 1;
+        }
+        .property-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #059669;
+            margin: 0 0 8px 0;
+        }
+        .property-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0 0 8px 0;
+        }
+        .property-location {
+            color: #64748b;
+            font-size: 14px;
+            margin: 0 0 12px 0;
+        }
+        .property-features {
+            display: flex;
+            gap: 16px;
+            color: #64748b;
+            font-size: 14px;
+        }
+        .sidebar {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0 0 20px 0;
+        }
+        .filter-group {
+            margin-bottom: 24px;
+        }
+        .filter-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+            margin: 0 0 12px 0;
+        }
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 0;
+        }
+        .filter-option input {
+            margin: 0;
+        }
+        .filter-option label {
+            color: #64748b;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .education-hero {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: white;
+            padding: 60px 32px;
+            text-align: center;
+        }
+        .education-hero h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+        }
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 32px 0;
+        }
+        .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            position: relative;
+        }
+        .step.active {
+            background: white;
+            color: #7c3aed;
+        }
+        .step.completed::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 14px;
+        }
+        .step-line {
+            height: 2px;
+            background: rgba(255,255,255,0.2);
+            flex: 1;
+            margin: 0 -8px;
+            position: relative;
+            top: 20px;
+        }
+        .calculator {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .calculator h3 {
+            font-size: 20px;
+            color: #1e293b;
+            margin: 0 0 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: #475569;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input[type="range"] {
+            width: 100%;
+            margin: 16px 0;
+        }
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            color: #64748b;
+            font-size: 12px;
+        }
+        .input-group {
+            position: relative;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #1e293b;
+        }
+        .input-group .currency {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        .input-group input {
+            padding-left: 30px;
+        }
+        .results {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 32px;
+        }
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .result-item:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 18px;
+            padding-top: 16px;
+        }
+        .result-label {
+            color: #64748b;
+        }
+        .result-value {
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .comparison-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .table-header {
+            background: #f8fafc;
+            padding: 16px 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .table-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .table-actions-left {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .table-actions-right {
+            display: flex;
+            gap: 12px;
+        }
+        .property-comparison {
+            display: flex;
+        }
+        .property-column {
+            flex: 1;
+            padding: 24px;
+            text-align: center;
+            border-right: 1px solid #e2e8f0;
+        }
+        .property-column:last-child {
+            border-right: none;
+        }
+        .property-image-compact {
+            width: 100%;
+            height: 120px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+        }
+        .property-address {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1e293b;
+        }
+        .property-price-compact {
+            font-size: 18px;
+            font-weight: 700;
+            color: #059669;
+            margin-bottom: 16px;
+        }
+        .property-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #64748b;
+        }
+        .mobile-header {
+            background: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .mobile-logo {
+            font-weight: 700;
+            color: #1e40af;
+            font-size: 18px;
+        }
+        .mobile-search {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 14px;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            margin: 12px 0;
+        }
+        .mobile-tabs {
+            display: flex;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0 16px;
+        }
+        .mobile-tab {
+            padding: 12px 16px;
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+        }
+        .mobile-tab.active {
+            color: #1e40af;
+            border-bottom-color: #1e40af;
+        }
+        .mobile-property-card {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+        }
+        .mobile-property-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #e2e8f0, #cbd5e1);
+            border-radius: 6px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 10px;
+        }
+        .mobile-property-info {
+            flex: 1;
+        }
+        .mobile-property-price {
+            font-weight: 700;
+            color: #059669;
+            margin-bottom: 4px;
+        }
+        .mobile-property-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+        .mobile-property-location {
+            color: #64748b;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        .mobile-property-features {
+            display: flex;
+            gap: 12px;
+            font-size: 12px;
+            color: #64748b;
+        }
+        .mobile-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            border-top: 1px solid #e2e8f0;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 10px;
+        }
+        .nav-item.active {
+            color: #1e40af;
+        }
+        .nav-icon {
+            font-size: 20px;
+        }
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-size: 14px;
+        }
+        .breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .mockup-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        }
+        .screen {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .screen-title {
+            background: #1e293b;
+            color: white;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1e40af;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+        .nav-link {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .nav-link.active {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+        .nav-link:hover {
+            background: #f1f5f9;
+        }
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary {
+            background: #1e40af;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: #1e40af;
+            border: 2px solid #1e40af;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #475569;
+            border: 1px solid #d1d5db;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 32px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 20px;
+            opacity: 0.9;
+            margin: 0 0 32px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .search-bar {
+            background: white;
+            border-radius: 12px;
+            padding: 8px;
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            outline: none;
+        }
+        .search-btn {
+            background: #1e40af;
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .portals {
+            padding: 60px 32px;
+            background: #f8fafc;
+        }
+        .portals h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0 0 16px 0;
+        }
+        .portals p {
+            text-align: center;
+            color: #64748b;
+            font-size: 18px;
+            margin: 0 0 48px 0;
+        }
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .portal-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .portal-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            border-color: #3b82f6;
+        }
+        .portal-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            font-weight: bold;
+        }
+        .portal-card.primerizo .portal-icon {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+        }
+        .portal-card.inversor .portal-icon {
+            background: linear-gradient(135deg, #ea580c, #f97316);
+        }
+        .portal-card.desarrollador .portal-icon {
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+        }
+        .portal-card.expatriado .portal-icon {
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+        }
+        .portal-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0 0 8px 0;
+        }
+        .portal-card p {
+            color: #64748b;
+            font-size: 14px;
+            margin: 0;
+            text-align: center;
+        }
+        .content {
+            padding: 32px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+        .property-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .property-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .property-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .property-content {
+            display: flex;
+            gap: 16px;
+            padding: 20px;
+        }
+        .property-image {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #e2e8f0, #cbd5e1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        .property-info {
+            flex: 1;
+        }
+        .property-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #059669;
+            margin: 0 0 8px 0;
+        }
+        .property-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0 0 8px 0;
+        }
+        .property-location {
+            color: #64748b;
+            font-size: 14px;
+            margin: 0 0 12px 0;
+        }
+        .property-features {
+            display: flex;
+            gap: 16px;
+            color: #64748b;
+            font-size: 14px;
+        }
+        .sidebar {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            height: fit-content;
+        }
+        .sidebar h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0 0 20px 0;
+        }
+        .filter-group {
+            margin-bottom: 24px;
+        }
+        .filter-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+            margin: 0 0 12px 0;
+        }
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 0;
+        }
+        .filter-option input {
+            margin: 0;
+        }
+        .filter-option label {
+            color: #64748b;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .education-hero {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: white;
+            padding: 60px 32px;
+            text-align: center;
+        }
+        .education-hero h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 0 0 16px 0;
+        }
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 32px 0;
+        }
+        .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            position: relative;
+        }
+        .step.active {
+            background: white;
+            color: #7c3aed;
+        }
+        .step.completed {
+            background: #22c55e;
+        }
+        .calculator {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+        .calculator h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0 0 24px 0;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus {
+            border-color: #3b82f6;
+        }
+        .result-card {
+            background: #f0fdf4;
+            border: 1px solid #22c55e;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .result-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: #15803d;
+            margin: 0 0 8px 0;
+        }
+        .result-label {
+            color: #16a34a;
+            font-size: 14px;
+            margin: 0;
+        }
+        .comparison-table {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 32px 0;
+        }
+        .table-header {
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px;
+        }
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 24px 20px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .compare-property {
+            text-align: center;
+        }
+        .compare-image {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(45deg, #e2e8f0, #cbd5e1);
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 12px;
+        }
+        .mobile-screen {
+            max-width: 375px;
+            margin: 20px auto;
+        }
+        .mobile-header {
+            background: #1e40af;
+            color: white;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hamburger {
+            width: 24px;
+            height: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .hamburger div {
+            width: 100%;
+            height: 2px;
+            background: white;
+            border-radius: 1px;
+        }
+        .mobile-logo {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .mobile-content {
+            background: #f8fafc;
+            min-height: 600px;
+            padding: 16px;
+        }
+        .mobile-search {
+            background: white;
+            border-radius: 8px;
+            padding: 4px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .mobile-search input {
+            width: 100%;
+            border: none;
+            padding: 12px;
+            outline: none;
+            border-radius: 4px;
+        }
+        .mobile-property-card {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .mobile-property-content {
+            padding: 16px;
+            display: flex;
+            gap: 12px;
+        }
+        .mobile-property-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #e2e8f0, #cbd5e1);
+            border-radius: 6px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 10px;
+        }
+        .mobile-property-info {
+            flex: 1;
+        }
+        .mobile-property-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #059669;
+            margin: 0 0 4px 0;
+        }
+        .mobile-property-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 0 0 4px 0;
+        }
+        .mobile-property-location {
+            color: #64748b;
+            font-size: 12px;
+            margin: 0 0 8px 0;
+        }
+        .mobile-property-features {
+            display: flex;
+            gap: 8px;
+            color: #64748b;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- NAVEGACIÓN -->
+        <div class="nav-header">
+            <div>
+                <a href="index.html" class="back-btn">
+                    ← Volver al Inicio
+                </a>
+                <div class="breadcrumb" style="margin-top: 8px;">
+                    <a href="index.html">Home</a>
+                    <span>→</span>
+                    <span>Mockups Finales</span>
+                </div>
+            </div>
+            <h1 class="page-title">🖼️ Mockups Finales - Plataforma Inmobiliaria CR</h1>
+        </div>
+        
+        <!-- HOME PAGE -->
+        <div class="mockup-section">
+            <h2 style="color: #1e293b; margin-bottom: 20px;">🏠 Home Page - Desktop</h2>
+            <div class="screen">
+                <div class="screen-title">Desktop - 1440px</div>
+                
+                <div class="header">
+                    <div class="logo">
+                        🏠 CasaCR
+                    </div>
+                    <nav class="nav">
+                        <a href="#" class="nav-link active">Inicio</a>
+                        <a href="#" class="nav-link">Propiedades</a>
+                        <a href="#" class="nav-link">Educación</a>
+                        <a href="#" class="nav-link">Herramientas</a>
+                    </nav>
+                    <div class="user-menu">
+                        <a href="#" class="btn btn-outline">Iniciar Sesión</a>
+                        <a href="#" class="btn btn-primary">Registrarse</a>
+                    </div>
+                </div>
+                
+                <div class="hero">
+                    <h1>Tu hogar en Costa Rica<br>está aquí</h1>
+                    <p>La única plataforma que te enseña todo lo que necesitas saber para comprar, vender o invertir en bienes raíces costarricenses.</p>
+                    <div class="search-bar">
+                        <input type="text" class="search-input" placeholder="Buscar por ubicación, tipo de propiedad o precio...">
+                        <button class="search-btn">🔍 Buscar</button>
+                    </div>
+                </div>
+                
+                <div class="portals">
+                    <h2>¿Qué tipo de usuario eres?</h2>
+                    <p>Accede a herramientas y contenido especializado para tu situación</p>
+                    <div class="portal-grid">
+                        <div class="portal-card primerizo">
+                            <div class="portal-icon">👋</div>
+                            <h3>Mi Primera Casa</h3>
+                            <p>Guías paso a paso, calculadoras y todo lo que necesitas para tu primera compra</p>
+                        </div>
+                        <div class="portal-card inversor">
+                            <div class="portal-icon">💼</div>
+                            <h3>Inversor Extranjero</h3>
+                            <p>Análisis ROI, información legal y gestión remota de propiedades</p>
+                        </div>
+                        <div class="portal-card desarrollador">
+                            <div class="portal-icon">🏗️</div>
+                            <h3>Desarrollador</h3>
+                            <p>Terrenos, zonificación, factibilidad y herramientas técnicas</p>
+                        </div>
+                        <div class="portal-card expatriado">
+                            <div class="portal-icon">🌎</div>
+                            <h3>Expatriado</h3>
+                            <p>Comunidades, calidad de vida y guías de relocalización</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content">
+                    <div class="content-grid">
+                        <div>
+                            <h2 style="color: #1e293b; margin-bottom: 24px;">Propiedades Destacadas</h2>
+                            <div class="property-list">
+                                <div class="property-card">
+                                    <div class="property-content">
+                                        <div class="property-image">
+                                            📸 Imagen<br>Principal
+                                        </div>
+                                        <div class="property-info">
+                                            <div class="property-price">₡125,000,000</div>
+                                            <div class="property-title">Casa en Escazú con Vista</div>
+                                            <div class="property-location">📍 Escazú, San José</div>
+                                            <div class="property-features">
+                                                <span>🛏️ 3 hab</span>
+                                                <span>🚿 2 baños</span>
+                                                <span>📐 220 m²</span>
+                                                <span>🚗 2 parqueos</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="property-card">
+                                    <div class="property-content">
+                                        <div class="property-image">
+                                            📸 Apartamento<br>Moderno
+                                        </div>
+                                        <div class="property-info">
+                                            <div class="property-price">₡85,000,000</div>
+                                            <div class="property-title">Apartamento en Santa Ana</div>
+                                            <div class="property-location">📍 Santa Ana, San José</div>
+                                            <div class="property-features">
+                                                <span>🛏️ 2 hab</span>
+                                                <span>🚿 2 baños</span>
+                                                <span>📐 120 m²</span>
+                                                <span>🏊 Piscina</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="property-card">
+                                    <div class="property-content">
+                                        <div class="property-image">
+                                            📸 Terreno<br>Comercial
+                                        </div>
+                                        <div class="property-info">
+                                            <div class="property-price">₡200,000,000</div>
+                                            <div class="property-title">Terreno Comercial Centro</div>
+                                            <div class="property-location">📍 San José Centro</div>
+                                            <div class="property-features">
+                                                <span>📐 500 m²</span>
+                                                <span>🏢 Comercial</span>
+                                                <span>🚌 Transporte</span>
+                                                <span>⚡ Servicios</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar">
+                            <h3>Filtros de Búsqueda</h3>
+                            <div class="filter-group">
+                                <div class="filter-title">Tipo de Propiedad</div>
+                                <div class="filter-options">
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="casa">
+                                        <label for="casa">Casa</label>
+                                    </div>
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="apart">
+                                        <label for="apart">Apartamento</label>
+                                    </div>
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="terreno">
+                                        <label for="terreno">Terreno</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <div class="filter-title">Rango de Precio</div>
+                                <div class="filter-options">
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="50-100">
+                                        <label for="50-100">₡50M - ₡100M</label>
+                                    </div>
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="100-200">
+                                        <label for="100-200">₡100M - ₡200M</label>
+                                    </div>
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="200+">
+                                        <label for="200+">₡200M+</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <div class="filter-title">Ubicación</div>
+                                <div class="filter-options">
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="escazu">
+                                        <label for="escazu">Escazú</label>
+                                    </div>
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="santa-ana">
+                                        <label for="santa-ana">Santa Ana</label>
+                                    </div>
+                                    <div class="filter-option">
+                                        <input type="checkbox" id="heredia">
+                                        <label for="heredia">Heredia</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PORTAL EDUCATIVO -->
+        <div class="mockup-section">
+            <h2 style="color: #1e293b; margin-bottom: 20px;">🎓 Portal Educativo "Mi Primera Casa"</h2>
+            <div class="screen">
+                <div class="screen-title">Portal de Educación - Compradores Primerizos</div>
+                
+                <div class="header">
+                    <div class="logo">🏠 CasaCR</div>
+                    <nav class="nav">
+                        <a href="#" class="nav-link">Inicio</a>
+                        <a href="#" class="nav-link">Propiedades</a>
+                        <a href="#" class="nav-link active">Educación</a>
+                        <a href="#" class="nav-link">Herramientas</a>
+                    </nav>
+                    <div class="user-menu">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="width: 32px; height: 32px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">M</div>
+                            <span style="color: #475569; font-weight: 500;">María F.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-hero">
+                    <h1>🎯 Mi Primera Casa en Costa Rica</h1>
+                    <p>Te guiamos paso a paso en el proceso de compra de tu primera propiedad</p>
+                    <div class="step-indicator">
+                        <div class="step active">1</div>
+                        <div class="step">2</div>
+                        <div class="step">3</div>
+                        <div class="step">4</div>
+                        <div class="step">5</div>
+                    </div>
+                    <p style="margin: 16px 0 0 0; font-size: 16px;">Paso 1: ¿Cuánto puedo pagar realmente?</p>
+                </div>
+                
+                <div class="content">
+                    <div class="content-grid">
+                        <div>
+                            <div class="calculator">
+                                <h3>🧮 Calculadora de Capacidad de Compra</h3>
+                                <p style="color: #64748b; margin-bottom: 24px;">Descubre cuánto puedes pagar incluyendo TODOS los costos adicionales</p>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Ingresos mensuales netos</label>
+                                    <input type="text" class="form-input" placeholder="₡800,000" value="₡800,000">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Gastos mensuales actuales</label>
+                                    <input type="text" class="form-input" placeholder="₡450,000" value="₡450,000">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Prima disponible (ahorros)</label>
+                                    <input type="text" class="form-input" placeholder="₡10,000,000" value="₡10,000,000">
+                                </div>
+                                
+                                <button class="btn btn-primary" style="width: 100%;">Calcular mi capacidad real</button>
+                                
+                                <div class="result-card">
+                                    <div class="result-amount">₡95,000,000</div>
+                                    <div class="result-label">Precio máximo recomendado (incluyendo todos los costos)</div>
+                                    <div style="margin-top: 12px; font-size: 14px; color: #16a34a;">
+                                        <strong>Desglose:</strong><br>
+                                        • Precio de propiedad: ₡85,000,000<br>
+                                        • Gastos legales (3%): ₡2,550,000<br>
+                                        • Impuestos y registros: ₡1,700,000<br>
+                                        • Inspección y avalúo: ₡350,000<br>
+                                        • Gastos varios: ₡400,000
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="background: #fefce8; border: 1px solid #eab308; border-radius: 8px; padding: 20px; margin-top: 24px;">
+                                <h4 style="color: #a16207; margin: 0 0 12px 0;">💡 ¿Sabías que...?</h4>
+                                <p style="color: #a16207; margin: 0; font-size: 14px;">
+                                    El precio de compra representa solo el 85-90% del costo total. Los gastos adicionales pueden sumar entre 8-15% del valor de la propiedad.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar">
+                            <h3>📚 Guías Relacionadas</h3>
+                            
+                            <div style="background: #faf5ff; border: 1px solid #a855f7; border-radius: 8px; padding: 16px; margin-bottom: 16px; cursor: pointer;">
+                                <h4 style="color: #7c3aed; margin: 0 0 8px 0; font-size: 14px;">📋 Documentos Necesarios</h4>
+                                <p style="margin: 0; font-size: 12px; color: #7c3aed;">Lista completa de papeles que necesitas tener listos</p>
+                            </div>
+                            
+                            <div style="background: #faf5ff; border: 1px solid #a855f7; border-radius: 8px; padding: 16px; margin-bottom: 16px; cursor: pointer;">
+                                <h4 style="color: #7c3aed; margin: 0 0 8px 0; font-size: 14px;">🏦 Opciones de Financiamiento</h4>
+                                <p style="margin: 0; font-size: 12px; color: #7c3aed;">Bancos, cooperativas y créditos disponibles</p>
+                            </div>
+                            
+                            <div style="background: #faf5ff; border: 1px solid #a855f7; border-radius: 8px; padding: 16px; margin-bottom: 16px; cursor: pointer;">
+                                <h4 style="color: #7c3aed; margin: 0 0 8px 0; font-size: 14px;">🕵️ Cómo Evaluar Barrios</h4>
+                                <p style="margin: 0; font-size: 12px; color: #7c3aed;">Seguridad, servicios y calidad de vida</p>
+                            </div>
+                            
+                            <div style="background: #faf5ff; border: 1px solid #a855f7; border-radius: 8px; padding: 16px; cursor: pointer;">
+                                <h4 style="color: #7c3aed; margin: 0 0 8px 0; font-size: 14px;">📞 Qué Preguntar al Agente</h4>
+                                <p style="margin: 0; font-size: 12px; color: #7c3aed;">Preguntas clave para no quedar en blanco</p>
+                            </div>
+                            
+                            <div style="margin-top: 32px; text-align: center;">
+                                <button class="btn btn-primary">Ver Propiedades en mi Rango</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPARADOR -->
+        <div class="mockup-section">
+            <h2 style="color: #1e293b; margin-bottom: 20px;">⚖️ Comparador de Propiedades</h2>
+            <div class="screen">
+                <div class="screen-title">Herramienta de Comparación</div>
+                
+                <div class="header">
+                    <div class="logo">🏠 CasaCR</div>
+                    <nav class="nav">
+                        <a href="#" class="nav-link">Inicio</a>
+                        <a href="#" class="nav-link">Propiedades</a>
+                        <a href="#" class="nav-link">Educación</a>
+                        <a href="#" class="nav-link active">Herramientas</a>
+                    </nav>
+                    <div class="user-menu">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="width: 32px; height: 32px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">M</div>
+                            <span style="color: #475569; font-weight: 500;">María F.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: #f8fafc; padding: 32px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;">
+                        <div>
+                            <h1 style="color: #1e293b; margin: 0 0 8px 0;">⚖️ Comparar Propiedades</h1>
+                            <p style="color: #64748b; margin: 0;">Evalúa lado a lado las opciones que más te interesan</p>
+                        </div>
+                        <button class="btn btn-primary">+ Agregar Propiedad</button>
+                    </div>
+                    
+                    <div class="comparison-table">
+                        <div class="table-header">
+                            <h3 style="margin: 0; color: #1e293b;">Comparación Detallada</h3>
+                        </div>
+                        
+                        <div class="table-row">
+                            <div class="compare-property">
+                                <div class="compare-image">
+                                    📸 Casa Escazú<br>Vista Montaña
+                                </div>
+                                <h4 style="color: #1e293b; margin: 0 0 8px 0;">Casa en Escazú</h4>
+                                <div style="color: #059669; font-size: 20px; font-weight: 700; margin-bottom: 8px;">₡125,000,000</div>
+                                <div style="color: #64748b; font-size: 14px;">Escazú, San José</div>
+                            </div>
+                            
+                            <div class="compare-property">
+                                <div class="compare-image">
+                                    📸 Apartamento<br>Santa Ana
+                                </div>
+                                <h4 style="color: #1e293b; margin: 0 0 8px 0;">Apartamento Santa Ana</h4>
+                                <div style="color: #059669; font-size: 20px; font-weight: 700; margin-bottom: 8px;">₡85,000,000</div>
+                                <div style="color: #64748b; font-size: 14px;">Santa Ana, San José</div>
+                            </div>
+                            
+                            <div class="compare-property">
+                                <div class="compare-image">
+                                    📸 Casa Heredia<br>Residencial
+                                </div>
+                                <h4 style="color: #1e293b; margin: 0 0 8px 0;">Casa en Heredia</h4>
+                                <div style="color: #059669; font-size: 20px; font-weight: 700; margin-bottom: 8px;">₡95,000,000</div>
+                                <div style="color: #64748b; font-size: 14px;">Heredia Centro</div>
+                            </div>
+                        </div>
+                        
+                        <div style="padding: 20px; background: #fafafa;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-bottom: 16px;">
+                                <div style="font-weight: 600; color: #374151;">Características</div>
+                                <div style="text-align: center; font-weight: 600; color: #374151;">Casa Escazú</div>
+                                <div style="text-align: center; font-weight: 600; color: #374151;">Apart. Santa Ana</div>
+                                <div style="text-align: center; font-weight: 600; color: #374151;">Casa Heredia</div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-bottom: 12px; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                                <div style="color: #64748b;">Habitaciones</div>
+                                <div style="text-align: center;">3</div>
+                                <div style="text-align: center;">2</div>
+                                <div style="text-align: center;">3</div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-bottom: 12px; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                                <div style="color: #64748b;">Baños</div>
+                                <div style="text-align: center;">2</div>
+                                <div style="text-align: center;">2</div>
+                                <div style="text-align: center;">2</div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-bottom: 12px; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                                <div style="color: #64748b;">Área (m²)</div>
+                                <div style="text-align: center;">220</div>
+                                <div style="text-align: center;">120</div>
+                                <div style="text-align: center;">180</div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-bottom: 12px; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                                <div style="color: #64748b;">Precio por m²</div>
+                                <div style="text-align: center;">₡568,182</div>
+                                <div style="text-align: center;">₡708,333</div>
+                                <div style="text-align: center;">₡527,778</div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-bottom: 12px; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                                <div style="color: #64748b;">Costo Total (con gastos)</div>
+                                <div style="text-align: center; color: #dc2626; font-weight: 600;">₡140,000,000</div>
+                                <div style="text-align: center; color: #059669; font-weight: 600;">₡95,200,000</div>
+                                <div style="text-align: center; color: #059669; font-weight: 600;">₡106,400,000</div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-bottom: 12px; padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                                <div style="color: #64748b;">Puntaje Ubicación</div>
+                                <div style="text-align: center;">
+                                    <div style="color: #059669;">⭐⭐⭐⭐⭐</div>
+                                    <div style="font-size: 12px; color: #64748b;">Excelente</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="color: #f59e0b;">⭐⭐⭐⭐☆</div>
+                                    <div style="font-size: 12px; color: #64748b;">Muy buena</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="color: #f59e0b;">⭐⭐⭐☆☆</div>
+                                    <div style="font-size: 12px; color: #64748b;">Buena</div>
+                                </div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-bottom: 12px; padding: 12px 0;">
+                                <div style="color: #64748b;">¿Está en tu presupuesto?</div>
+                                <div style="text-align: center;">
+                                    <span style="background: #fef2f2; color: #dc2626; padding: 4px 8px; border-radius: 4px; font-size: 12px;">❌ Excede</span>
+                                </div>
+                                <div style="text-align: center;">
+                                    <span style="background: #f0fdf4; color: #16a34a; padding: 4px 8px; border-radius: 4px; font-size: 12px;">✅ Sí</span>
+                                </div>
+                                <div style="text-align: center;">
+                                    <span style="background: #fefce8; color: #a16207; padding: 4px 8px; border-radius: 4px; font-size: 12px;">⚠️ Justo</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="padding: 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+                            <button class="btn btn-outline">Ver Detalles</button>
+                            <button class="btn btn-primary">Contactar Agente</button>
+                            <button class="btn btn-outline">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE SCREENS -->
+        <div class="mockup-section">
+            <h2 style="color: #1e293b; margin-bottom: 20px;">📱 Versión Mobile</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                
+                <div class="screen mobile-screen">
+                    <div class="screen-title">Mobile - Home</div>
+                    <div class="mobile-header">
+                        <div class="hamburger">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="mobile-logo">🏠 CasaCR</div>
+                        <div style="width: 32px; height: 32px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <div style="color: white; font-size: 18px;">👤</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-content">
+                        <div class="mobile-search">
+                            <input type="text" placeholder="🔍 Buscar propiedades...">
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px;">
+                            <div style="background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; padding: 16px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 24px; margin-bottom: 8px;">👋</div>
+                                <div style="font-size: 12px; font-weight: 600;">Mi Primera Casa</div>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #ea580c, #f97316); color: white; padding: 16px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 24px; margin-bottom: 8px;">💼</div>
+                                <div style="font-size: 12px; font-weight: 600;">Inversores</div>
+                            </div>
+                        </div>
+                        
+                        <h3 style="color: #1e293b; margin: 0 0 16px 0; font-size: 18px;">Propiedades Destacadas</h3>
+                        
+                        <div class="mobile-property-card">
+                            <div class="mobile-property-content">
+                                <div class="mobile-property-image">
+                                    📸 Casa<br>Escazú
+                                </div>
+                                <div class="mobile-property-info">
+                                    <div class="mobile-property-price">₡125M</div>
+                                    <div class="mobile-property-title">Casa en Escazú con Vista</div>
+                                    <div class="mobile-property-location">📍 Escazú, San José</div>
+                                    <div class="mobile-property-features">
+                                        <span>🛏️ 3</span>
+                                        <span>🚿 2</span>
+                                        <span>📐 220m²</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mobile-property-card">
+                            <div class="mobile-property-content">
+                                <div class="mobile-property-image">
+                                    📸 Apart.<br>S.Ana
+                                </div>
+                                <div class="mobile-property-info">
+                                    <div class="mobile-property-price">₡85M</div>
+                                    <div class="mobile-property-title">Apartamento Santa Ana</div>
+                                    <div class="mobile-property-location">📍 Santa Ana, San José</div>
+                                    <div class="mobile-property-features">
+                                        <span>🛏️ 2</span>
+                                        <span>🚿 2</span>
+                                        <span>🏊 Piscina</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mobile-property-card">
+                            <div class="mobile-property-content">
+                                <div class="mobile-property-image">
+                                    📸 Casa<br>Heredia
+                                </div>
+                                <div class="mobile-property-info">
+                                    <div class="mobile-property-price">₡95M</div>
+                                    <div class="mobile-property-title">Casa Heredia Centro</div>
+                                    <div class="mobile-property-location">📍 Heredia Centro</div>
+                                    <div class="mobile-property-features">
+                                        <span>🛏️ 3</span>
+                                        <span>🚿 2</span>
+                                        <span>🚗 Parqueo</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="screen mobile-screen">
+                    <div class="screen-title">Mobile - Portal Educativo</div>
+                    <div style="background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between;">
+                        <div style="font-size: 18px;">←</div>
+                        <div style="font-size: 16px; font-weight: 600;">Mi Primera Casa</div>
+                        <div style="width: 32px; height: 32px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <div style="color: white; font-size: 14px; font-weight: bold;">M</div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fefce8; padding: 16px; border-bottom: 1px solid #eab308;">
+                        <div style="text-align: center;">
+                            <h3 style="color: #a16207; margin: 0 0 16px 0; font-size: 16px;">Paso 1: Presupuesto Real</h3>
+                            <div class="step-indicator" style="justify-content: center; margin: 0;">
+                                <div class="step active" style="width: 32px; height: 32px;">1</div>
+                                <div class="step" style="width: 32px; height: 32px;">2</div>
+                                <div class="step" style="width: 32px; height: 32px;">3</div>
+                                <div class="step" style="width: 32px; height: 32px;">4</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="padding: 16px; background: #f8fafc; min-height: 500px;">
+                        <h3 style="color: #1e293b; margin: 0 0 16px 0; font-size: 18px;">🧮 ¿Cuánto puedo pagar?</h3>
+                        
+                        <div style="background: white; border-radius: 8px; padding: 20px; margin-bottom: 16px;">
+                            <div style="margin-bottom: 16px;">
+                                <label style="display: block; font-size: 14px; font-weight: 500; color: #374151; margin-bottom: 8px;">Ingresos mensuales</label>
+                                <input type="text" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px;" value="₡800,000">
+                            </div>
+                            
+                            <div style="margin-bottom: 16px;">
+                                <label style="display: block; font-size: 14px; font-weight: 500; color: #374151; margin-bottom: 8px;">Gastos mensuales</label>
+                                <input type="text" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px;" value="₡450,000">
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; font-size: 14px; font-weight: 500; color: #374151; margin-bottom: 8px;">Prima disponible</label>
+                                <input type="text" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px;" value="₡10,000,000">
+                            </div>
+                            
+                            <button style="width: 100%; background: #7c3aed; color: white; border: none; padding: 16px; border-radius: 8px; font-weight: 600; font-size: 16px;">Calcular</button>
+                        </div>
+                        
+                        <div style="background: #f0fdf4; border: 1px solid #22c55e; border-radius: 8px; padding: 16px; text-align: center;">
+                            <div style="font-size: 24px; font-weight: 700; color: #15803d; margin-bottom: 4px;">₡95,000,000</div>
+                            <div style="color: #16a34a; font-size: 12px;">Precio máximo recomendado</div>
+                        </div>
+                        
+                        <div style="margin-top: 16px; text-align: center;">
+                            <button style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 600;">Ver Propiedades en mi Rango</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

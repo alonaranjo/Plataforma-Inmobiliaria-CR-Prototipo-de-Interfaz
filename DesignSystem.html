@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Colores</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .nav-header {
+            background: white;
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        .back-btn:hover {
+            background: #e2e8f0;
+            transform: translateX(-2px);
+        }
+        .page-title {
+            color: #1e293b;
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        .breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .color-card {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .color-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .color-preview {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        .color-info {
+            padding: 12px;
+            background: white;
+        }
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1e293b;
+        }
+        .color-hex {
+            font-size: 12px;
+            color: #64748b;
+            font-family: 'Courier New', monospace;
+        }
+        .usage {
+            font-size: 11px;
+            color: #475569;
+            margin-top: 8px;
+            padding: 4px 8px;
+            background: #f8fafc;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        h2 {
+            color: #1e293b;
+            margin-bottom: 16px;
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .typography {
+            margin-top: 24px;
+        }
+        .font-example {
+            margin: 12px 0;
+            padding: 12px;
+            border-left: 4px solid #3b82f6;
+            background: #f8fafc;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- NAVEGACIÓN -->
+        <div class="nav-header">
+            <div>
+                <a href="index.html" class="back-btn">
+                    ← Volver al Inicio
+                </a>
+                <div class="breadcrumb" style="margin-top: 8px;">
+                    <a href="index.html">Home</a>
+                    <span>→</span>
+                    <span>Sistema de Diseño</span>
+                </div>
+            </div>
+            <h1 class="page-title">Sistema de Diseño - Plataforma Inmobiliaria CR</h1>
+        </div>
+        
+        <div class="section">
+            <h2>Colores Primarios</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-preview" style="background: #1e40af;">Primario</div>
+                    <div class="color-info">
+                        <div class="color-name">Azul Confianza</div>
+                        <div class="color-hex">#1e40af</div>
+                        <div class="usage">Botones principales, enlaces</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #059669;">Éxito</div>
+                    <div class="color-info">
+                        <div class="color-name">Verde Éxito</div>
+                        <div class="color-hex">#059669</div>
+                        <div class="usage">Estados exitosos, disponible</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #dc2626;">Acento</div>
+                    <div class="color-info">
+                        <div class="color-name">Rojo Acento</div>
+                        <div class="color-hex">#dc2626</div>
+                        <div class="usage">Alertas, precio destacado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Colores Neutros</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-preview" style="background: #0f172a; color: white;">Gris 900</div>
+                    <div class="color-info">
+                        <div class="color-name">Texto Principal</div>
+                        <div class="color-hex">#0f172a</div>
+                        <div class="usage">Títulos, texto importante</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #475569; color: white;">Gris 600</div>
+                    <div class="color-info">
+                        <div class="color-name">Texto Secundario</div>
+                        <div class="color-hex">#475569</div>
+                        <div class="usage">Descripciones, metadata</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #f1f5f9; color: #475569;">Gris 50</div>
+                    <div class="color-info">
+                        <div class="color-name">Fondo Suave</div>
+                        <div class="color-hex">#f1f5f9</div>
+                        <div class="usage">Fondos, separadores</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Colores por Usuario</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-preview" style="background: #7c3aed;">Primerizo</div>
+                    <div class="color-info">
+                        <div class="color-name">Púrpura Guía</div>
+                        <div class="color-hex">#7c3aed</div>
+                        <div class="usage">Portal compradores primerizos</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #ea580c;">Inversor</div>
+                    <div class="color-info">
+                        <div class="color-name">Naranja Premium</div>
+                        <div class="color-hex">#ea580c</div>
+                        <div class="usage">Portal inversores extranjeros</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #0891b2;">Desarrollador</div>
+                    <div class="color-info">
+                        <div class="color-name">Cyan Técnico</div>
+                        <div class="color-hex">#0891b2</div>
+                        <div class="usage">Portal desarrolladores</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-preview" style="background: #16a34a;">Expatriado</div>
+                    <div class="color-info">
+                        <div class="color-name">Verde Comunidad</div>
+                        <div class="color-hex">#16a34a</div>
+                        <div class="usage">Portal expatriados</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section typography">
+            <h2>Tipografía</h2>
+            <div class="font-example" style="font-size: 32px; font-weight: 700;">
+                H1 - Títulos Principales (32px, Bold)
+            </div>
+            <div class="font-example" style="font-size: 24px; font-weight: 600;">
+                H2 - Títulos Sección (24px, SemiBold)
+            </div>
+            <div class="font-example" style="font-size: 18px; font-weight: 500;">
+                H3 - Títulos Menores (18px, Medium)
+            </div>
+            <div class="font-example" style="font-size: 16px; font-weight: 400;">
+                Body - Texto Principal (16px, Regular)
+            </div>
+            <div class="font-example" style="font-size: 14px; font-weight: 400; color: #64748b;">
+                Small - Texto Secundario (14px, Regular)
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Componentes de Botones</h2>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px;">
+                <button style="background: #1e40af; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                    Primario
+                </button>
+                <button style="background: transparent; color: #1e40af; border: 2px solid #1e40af; padding: 10px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                    Secundario
+                </button>
+                <button style="background: #f1f5f9; color: #475569; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                    Neutro
+                </button>
+                <button style="background: #dc2626; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">
+                    Alerta
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
