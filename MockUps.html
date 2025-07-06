@@ -1278,20 +1278,20 @@
         </div>
         
         <!-- HOME PAGE -->
-        <div class="mockup-section">
+        <div id="home-page" class="mockup-section">
             <h2 style="color: #1e293b; margin-bottom: 20px;">🏠 Home Page - Desktop</h2>
             <div class="screen">
                 <div class="screen-title">Desktop - 1440px</div>
                 
                 <div class="header">
                     <div class="logo">
-                        🏠 CasaCR
+                        🏠 Plataforma Inmobiliaria CR
                     </div>
                     <nav class="nav">
-                        <a href="#" class="nav-link active">Inicio</a>
-                        <a href="#" class="nav-link">Propiedades</a>
-                        <a href="#" class="nav-link">Educación</a>
-                        <a href="#" class="nav-link">Herramientas</a>
+                        <a href="#home-page" class="nav-link active">Inicio</a>
+                        <a href="#property-detail" class="nav-link">Propiedades</a>
+                        <a href="#education" class="nav-link">Educación</a>
+                        <a href="#comparator" class="nav-link">Herramientas</a>
                     </nav>
                     <div class="user-menu">
                         <a href="#" class="btn btn-outline">Iniciar Sesión</a>
@@ -1460,19 +1460,200 @@
             </div>
         </div>
 
+        <!-- DETALLE DE PROPIEDAD -->
+        <div id="property-detail" class="mockup-section">
+            <h2 style="color: #1e293b; margin-bottom: 20px;">🏡 Detalle de Propiedad</h2>
+            <div class="screen">
+                <div class="screen-title">Página de Detalle de Propiedad - Desktop</div>
+                
+                <div class="header">
+                    <div class="logo">🏠 Plataforma Inmobiliaria CR</div>
+                    <nav class="nav">
+                        <a href="#home-page" class="nav-link">Inicio</a>
+                        <a href="#property-detail" class="nav-link active">Propiedades</a>
+                        <a href="#education" class="nav-link">Educación</a>
+                        <a href="#comparator" class="nav-link">Herramientas</a>
+                    </nav>
+                    <div class="user-menu">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <div style="width: 32px; height: 32px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">M</div>
+                            <span style="color: #475569; font-weight: 500;">María F.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Breadcrumb -->
+                <div style="background: #f8fafc; padding: 12px 32px; border-bottom: 1px solid #e2e8f0;">
+                    <div class="breadcrumb">
+                        <a href="#">Inicio</a>
+                        <span>→</span>
+                        <a href="#">Propiedades</a>
+                        <span>→</span>
+                        <a href="#">Escazú</a>
+                        <span>→</span>
+                        <span>Casa en Residencial Vista Verde</span>
+                    </div>
+                </div>
+                
+                <!-- Galería Principal -->
+                <div style="height: 400px; background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%); display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 18px; font-weight: 600; position: relative;">
+                    <div style="text-align: center;">
+                        📸 GALERÍA DE IMÁGENES PRINCIPAL<br>
+                        <div style="font-size: 14px; margin-top: 8px; opacity: 0.8;">Carrusel con 15 fotos de la propiedad</div>
+                    </div>
+                    <div style="position: absolute; bottom: 16px; right: 16px; background: rgba(0,0,0,0.7); color: white; padding: 8px 12px; border-radius: 6px; font-size: 14px;">
+                        ❤️ Guardar | 📤 Compartir
+                    </div>
+                </div>
+                
+                <div class="content">
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+                        <!-- Contenido Principal -->
+                        <div>
+                            <!-- Título y Precio -->
+                            <div style="margin-bottom: 32px;">
+                                <h1 style="color: #1e293b; font-size: 32px; font-weight: 700; margin: 0 0 8px 0;">Casa en Residencial Vista Verde</h1>
+                                <div style="color: #059669; font-size: 36px; font-weight: 800; margin: 0 0 12px 0;">₡125,000,000</div>
+                                <div style="color: #64748b; font-size: 16px; display: flex; align-items: center; gap: 8px;">
+                                    📍 Escazú, San José • Residencial Vista Verde
+                                </div>
+                            </div>
+                            
+                            <!-- Características Principales -->
+                            <div style="margin-bottom: 32px;">
+                                <h3 style="color: #1e293b; font-size: 20px; font-weight: 600; margin: 0 0 16px 0;">🏠 Características Principales</h3>
+                                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+                                        <div style="font-size: 24px; margin-bottom: 8px;">🛏️</div>
+                                        <div style="font-weight: 600; color: #1e293b;">3</div>
+                                        <div style="font-size: 14px; color: #64748b;">Habitaciones</div>
+                                    </div>
+                                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+                                        <div style="font-size: 24px; margin-bottom: 8px;">🚿</div>
+                                        <div style="font-weight: 600; color: #1e293b;">2</div>
+                                        <div style="font-size: 14px; color: #64748b;">Baños</div>
+                                    </div>
+                                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+                                        <div style="font-size: 24px; margin-bottom: 8px;">📐</div>
+                                        <div style="font-weight: 600; color: #1e293b;">220 m²</div>
+                                        <div style="font-size: 14px; color: #64748b;">Construcción</div>
+                                    </div>
+                                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center;">
+                                        <div style="font-size: 24px; margin-bottom: 8px;">🚗</div>
+                                        <div style="font-weight: 600; color: #1e293b;">2</div>
+                                        <div style="font-size: 14px; color: #64748b;">Parqueos</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Descripción -->
+                            <div style="margin-bottom: 32px;">
+                                <h3 style="color: #1e293b; font-size: 20px; font-weight: 600; margin: 0 0 16px 0;">📝 Descripción</h3>
+                                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px;">
+                                    <p style="color: #475569; line-height: 1.6; margin: 0;">
+                                        Hermosa casa de dos plantas ubicada en uno de los residenciales más exclusivos de Escazú. 
+                                        Con acabados de primera calidad, amplios espacios y una vista espectacular hacia las montañas. 
+                                        La propiedad cuenta con jardín privado, área de BBQ y se encuentra en una zona muy segura 
+                                        con acceso controlado las 24 horas.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Mapa de Ubicación -->
+                            <div style="margin-bottom: 32px;">
+                                <h3 style="color: #1e293b; font-size: 20px; font-weight: 600; margin: 0 0 16px 0;">📍 Ubicación y Vecindario</h3>
+                                <div style="height: 300px; background: linear-gradient(45deg, #e2e8f0, #cbd5e1); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #64748b; font-weight: 600; border: 1px solid #e2e8f0;">
+                                    🗺️ MAPA INTERACTIVO<br>
+                                    <div style="font-size: 14px; margin-top: 8px; text-align: center;">
+                                        Vista del vecindario • Servicios cercanos • Rutas de transporte
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sidebar -->
+                        <div>
+                            <!-- Tarjeta de Contacto -->
+                            <div style="background: #f0fdf4; border: 2px solid #22c55e; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
+                                <h4 style="color: #15803d; margin: 0 0 16px 0; font-size: 18px;">💬 Contactar Agente</h4>
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                                    <div style="width: 48px; height: 48px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">JS</div>
+                                    <div>
+                                        <div style="font-weight: 600; color: #15803d;">Juan Solís</div>
+                                        <div style="font-size: 14px; color: #16a34a;">Agente Inmobiliario</div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary" style="width: 100%; margin-bottom: 12px;">📞 Llamar Ahora</button>
+                                <button class="btn btn-outline" style="width: 100%;">📱 WhatsApp</button>
+                            </div>
+                            
+                            <!-- Calculadora Rápida -->
+                            <div style="background: #dbeafe; border: 2px solid #3b82f6; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
+                                <h4 style="color: #1d4ed8; margin: 0 0 16px 0; font-size: 18px;">🧮 Cálculo Rápido</h4>
+                                <div style="font-size: 14px; color: #1e40af; margin-bottom: 12px;">
+                                    <strong>Costo Total Estimado:</strong><br>
+                                    ₡140,000,000 (con gastos)
+                                </div>
+                                <div style="font-size: 12px; color: #1e40af; margin-bottom: 16px;">
+                                    • Prima sugerida: ₡28,000,000<br>
+                                    • Cuota mensual: ₡420,000<br>
+                                    • Gastos legales: ₡12,000,000
+                                </div>
+                                <button class="btn btn-primary" style="width: 100%;">📊 Ver Cálculo Completo</button>
+                            </div>
+                            
+                            <!-- Amenidades -->
+                            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
+                                <h4 style="color: #1e293b; margin: 0 0 16px 0; font-size: 18px;">✨ Amenidades</h4>
+                                <div style="display: grid; grid-template-columns: 1fr; gap: 8px; font-size: 14px; color: #475569;">
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span style="color: #22c55e;">✅</span> Seguridad 24/7
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span style="color: #22c55e;">✅</span> Área de BBQ
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span style="color: #22c55e;">✅</span> Jardín privado
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span style="color: #22c55e;">✅</span> Vista a las montañas
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span style="color: #22c55e;">✅</span> Cerca de centros comerciales
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span style="color: #22c55e;">✅</span> Acceso a transporte público
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Acción Rápida -->
+                            <div style="background: #fef3c7; border: 2px solid #f59e0b; border-radius: 12px; padding: 20px; text-align: center;">
+                                <h4 style="color: #92400e; margin: 0 0 12px 0; font-size: 16px;">🎯 Acción Recomendada</h4>
+                                <p style="font-size: 14px; color: #92400e; margin: 0 0 16px 0;">
+                                    Esta propiedad está en tu rango de presupuesto pero muy cerca del límite
+                                </p>
+                                <button class="btn" style="background: #f59e0b; color: white; width: 100%;">⚖️ Comparar con Similares</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- PORTAL EDUCATIVO -->
-        <div class="mockup-section">
+        <div id="education" class="mockup-section">
             <h2 style="color: #1e293b; margin-bottom: 20px;">🎓 Portal Educativo "Mi Primera Casa"</h2>
             <div class="screen">
                 <div class="screen-title">Portal de Educación - Compradores Primerizos</div>
                 
                 <div class="header">
-                    <div class="logo">🏠 CasaCR</div>
+                    <div class="logo">🏠 Plataforma Inmobiliaria CR</div>
                     <nav class="nav">
-                        <a href="#" class="nav-link">Inicio</a>
-                        <a href="#" class="nav-link">Propiedades</a>
-                        <a href="#" class="nav-link active">Educación</a>
-                        <a href="#" class="nav-link">Herramientas</a>
+                        <a href="#home-page" class="nav-link">Inicio</a>
+                        <a href="#property-detail" class="nav-link">Propiedades</a>
+                        <a href="#education" class="nav-link active">Educación</a>
+                        <a href="#comparator" class="nav-link">Herramientas</a>
                     </nav>
                     <div class="user-menu">
                         <div style="display: flex; align-items: center; gap: 12px;">
@@ -1574,18 +1755,18 @@
         </div>
 
         <!-- COMPARADOR -->
-        <div class="mockup-section">
+        <div id="comparator" class="mockup-section">
             <h2 style="color: #1e293b; margin-bottom: 20px;">⚖️ Comparador de Propiedades</h2>
             <div class="screen">
                 <div class="screen-title">Herramienta de Comparación</div>
                 
                 <div class="header">
-                    <div class="logo">🏠 CasaCR</div>
+                    <div class="logo">🏠 Plataforma Inmobiliaria CR</div>
                     <nav class="nav">
-                        <a href="#" class="nav-link">Inicio</a>
-                        <a href="#" class="nav-link">Propiedades</a>
-                        <a href="#" class="nav-link">Educación</a>
-                        <a href="#" class="nav-link active">Herramientas</a>
+                        <a href="#home-page" class="nav-link">Inicio</a>
+                        <a href="#property-detail" class="nav-link">Propiedades</a>
+                        <a href="#education" class="nav-link">Educación</a>
+                        <a href="#comparator" class="nav-link active">Herramientas</a>
                     </nav>
                     <div class="user-menu">
                         <div style="display: flex; align-items: center; gap: 12px;">
